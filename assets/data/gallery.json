@@ -1,93 +1,43 @@
 {
   "items": [
     {
-      "id": "1783587042362",
-      "url": "/assets/images/gallery/1783587042355-gdl9cdlkwgm.jpg",
+      "id": "polaroid-wedding-station",
+      "url": "/assets/images/recent-events/polaroid-wedding-station.jpg",
       "category": "polaroid-guestbook"
     },
     {
-      "id": "1783587067105",
-      "url": "/assets/images/gallery/1783587067093-l2ttxlq4om.jpg",
+      "id": "polaroid-wedding-couple",
+      "url": "/assets/images/recent-events/polaroid-wedding-couple.jpg",
       "category": "polaroid-guestbook"
     },
     {
-      "id": "1783589948376",
-      "url": "/assets/images/gallery/1783589948373-6elg4myemp3.jpg",
+      "id": "polaroid-signing-guestbook",
+      "url": "/assets/images/recent-events/polaroid-signing-guestbook.jpg",
       "category": "polaroid-guestbook"
     },
     {
-      "id": "1783589969096",
-      "url": "/assets/images/gallery/1783589969090-428qlj317lp.jpg",
+      "id": "polaroid-birthday-guestbook",
+      "url": "/assets/images/recent-events/polaroid-birthday-guestbook.jpg",
       "category": "polaroid-guestbook"
     },
     {
-      "id": "1783589979151",
-      "url": "/assets/images/gallery/1783589979139-h7opp8qcwvr.jpg",
-      "category": "polaroid-guestbook"
-    },
-    {
-      "id": "1783589990520",
-      "url": "/assets/images/gallery/1783589990504-jsqjesxuk8.jpg",
-      "category": "polaroid-guestbook"
-    },
-    {
-      "id": "1783595750056",
-      "url": "/assets/images/gallery/1783595750047-8vqrxws7nn2.jpg",
-      "category": "polaroid-guestbook"
-    },
-    {
-      "id": "1783595804338",
-      "url": "/assets/images/gallery/1783595804328-gmg5r7nqdac.jpg",
-      "category": "polaroid-guestbook"
-    },
-    {
-      "id": "1783595880989",
-      "url": "/assets/images/gallery/1783595880986-ijath5sumv.jpg",
+      "id": "preshoot-gallery-wedding",
+      "url": "/assets/images/recent-events/preshoot-gallery-wedding.jpg",
       "category": "preshoot-gallery"
     },
     {
-      "id": "1783595894334",
-      "url": "/assets/images/gallery/1783595894331-j5xm6zfsi9e.jpg",
-      "category": "preshoot-gallery"
-    },
-    {
-      "id": "1783595915401",
-      "url": "/assets/images/gallery/1783595915397-jhpq0lwljvp.jpg",
-      "category": "preshoot-gallery"
-    },
-    {
-      "id": "1783595952147",
-      "url": "/assets/images/gallery/1783595952144-6isg18iui3.jpg",
+      "id": "selfie-mirror-wedding-couple",
+      "url": "/assets/images/recent-events/selfie-mirror-wedding-couple.jpg",
       "category": "selfie-mirror"
     },
     {
-      "id": "1783595967869",
-      "url": "/assets/images/gallery/1783595967865-b5ij385fraj.jpg",
+      "id": "selfie-mirror-birthday-mascot",
+      "url": "/assets/images/recent-events/selfie-mirror-birthday-mascot.jpg",
       "category": "selfie-mirror"
     },
     {
-      "id": "1783595974030",
-      "url": "/assets/images/gallery/1783595974026-pzgqrkwq73i.jpg",
-      "category": "selfie-mirror"
-    },
-    {
-      "id": "1783595981599",
-      "url": "/assets/images/gallery/1783595981596-5qk63xuu6ud.jpg",
-      "category": "selfie-mirror"
-    },
-    {
-      "id": "1783596015689",
-      "url": "/assets/images/gallery/1783596015686-h92v8e3mj96.jpg",
-      "category": "selfie-mirror"
-    },
-    {
-      "id": "1783596031495",
-      "url": "/assets/images/gallery/1783596031490-k66euivezab.jpg",
-      "category": "selfie-mirror"
-    },
-    {
-      "id": "1783596056568",
-      "url": "/assets/images/gallery/1783596056563-irhi2coucm.jpg",
+      "id": "selfie-mirror-birthday-family",
+      "url": "/assets/images/recent-events/selfie-mirror-birthday-family.jpg",
       "category": "selfie-mirror"
     }
   ]
