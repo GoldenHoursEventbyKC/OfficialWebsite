@@ -2,42 +2,42 @@
   "items": [
     {
       "id": "polaroid-wedding-station",
-      "url": "/assets/images/recent-events/polaroid-wedding-station.jpg",
+      "url": "assets/images/recent-events/polaroid-wedding-station.jpg",
       "category": "polaroid-guestbook"
     },
     {
       "id": "polaroid-wedding-couple",
-      "url": "/assets/images/recent-events/polaroid-wedding-couple.jpg",
+      "url": "assets/images/recent-events/polaroid-wedding-couple.jpg",
       "category": "polaroid-guestbook"
     },
     {
       "id": "polaroid-signing-guestbook",
-      "url": "/assets/images/recent-events/polaroid-signing-guestbook.jpg",
+      "url": "assets/images/recent-events/polaroid-signing-guestbook.jpg",
       "category": "polaroid-guestbook"
     },
     {
       "id": "polaroid-birthday-guestbook",
-      "url": "/assets/images/recent-events/polaroid-birthday-guestbook.jpg",
+      "url": "assets/images/recent-events/polaroid-birthday-guestbook.jpg",
       "category": "polaroid-guestbook"
     },
     {
       "id": "preshoot-gallery-wedding",
-      "url": "/assets/images/recent-events/preshoot-gallery-wedding.jpg",
+      "url": "assets/images/recent-events/preshoot-gallery-wedding.jpg",
       "category": "preshoot-gallery"
     },
     {
       "id": "selfie-mirror-wedding-couple",
-      "url": "/assets/images/recent-events/selfie-mirror-wedding-couple.jpg",
+      "url": "assets/images/recent-events/selfie-mirror-wedding-couple.jpg",
       "category": "selfie-mirror"
     },
     {
       "id": "selfie-mirror-birthday-mascot",
-      "url": "/assets/images/recent-events/selfie-mirror-birthday-mascot.jpg",
+      "url": "assets/images/recent-events/selfie-mirror-birthday-mascot.jpg",
       "category": "selfie-mirror"
     },
     {
       "id": "selfie-mirror-birthday-family",
-      "url": "/assets/images/recent-events/selfie-mirror-birthday-family.jpg",
+      "url": "assets/images/recent-events/selfie-mirror-birthday-family.jpg",
       "category": "selfie-mirror"
     }
   ]
