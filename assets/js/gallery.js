@@ -17,13 +17,27 @@ async function loadGallery() {
     const data = await apiFetch("/api/gallery");
     galleryItems = data.items || [];
   } catch {
-    const response = await fetch("assets/data/gallery.json");
+    const response = await fetch(`assets/data/gallery.json?v=${Date.now()}`, {
+      cache: "no-store",
+    });
     const data = await response.json();
     galleryItems = data.items || [];
   }
   renderGallery();
   bindFilters();
   bindLightbox();
+}
+
+function galleryImageUrl(url) {
+  if (!url) return "";
+  if (/^https?:\/\//i.test(url)) return url;
+  if (url.startsWith("/assets/")) {
+    const basePath = window.location.pathname.includes("/OfficialWebsite/")
+      ? "/OfficialWebsite"
+      : "";
+    return `${basePath}${url}`;
+  }
+  return url;
 }
 
 function renderGallery() {
@@ -39,7 +53,7 @@ function renderGallery() {
     const div = document.createElement("div");
     div.className = `gallery-item ${item.category}`;
     const img = document.createElement("img");
-    img.src = item.url.startsWith("/") ? apiUrl(item.url) : item.url;
+    img.src = galleryImageUrl(item.url);
     img.alt = `${CATEGORY_LABELS[item.category] || item.category} event photo`;
     div.appendChild(img);
     galleryGrid.appendChild(div);
