@@ -17,4 +17,8 @@ const CONFIG = {
   ADMIN_API_TOKEN: "goldenhourmoments",
 
   CONTACT_EMAIL: "goldenhourseventkcwork@gmail.com",
+
+  GOOGLE_CALENDAR_ID:
+    "ec65656a09c939325c73aca7ab25aea6bb292d0604813ae6959457d8b28c564f@group.calendar.google.com",
+  GOOGLE_CALENDAR_TIMEZONE: "Asia/Manila",
 };

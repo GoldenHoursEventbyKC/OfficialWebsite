@@ -3,6 +3,11 @@ const calendarDays = document.getElementById("calendarDays");
 const bookedList = document.getElementById("bookedList");
 const availableList = document.getElementById("availableList");
 const selectedDateText = document.getElementById("selectedDate");
+const calendarStatus = document.getElementById("calendarStatus");
+const googleCalendarEmbed = document.getElementById("googleCalendarEmbed");
+const googleCalendarFrame = document.getElementById("googleCalendarFrame");
+const calendarContainer = document.querySelector(".calendar-container");
+const bookingPanel = document.querySelector(".booking-panel");
 
 let currentDate = new Date();
 let bookings = {};
@@ -26,14 +31,46 @@ async function loadBookings() {
     if (data.defaultSlots) defaultSlots = data.defaultSlots;
   } catch (err) {
     console.warn("Could not load Google Calendar events:", err.message);
-    const statusEl = document.getElementById("calendarStatus");
-    if (statusEl) {
-      statusEl.textContent =
-        "Calendar unavailable — start the server and configure Google Calendar (see SETUP below).";
-      statusEl.style.display = "block";
-    }
+    showGoogleCalendarEmbed();
   }
   renderCalendar();
+}
+
+function showGoogleCalendarEmbed() {
+  const calendarId =
+    typeof CONFIG !== "undefined" ? CONFIG.GOOGLE_CALENDAR_ID : "";
+  if (!calendarId || !googleCalendarEmbed || !googleCalendarFrame) {
+    if (calendarStatus) {
+      calendarStatus.textContent =
+        "Calendar unavailable. Please check the Google Calendar setup.";
+      calendarStatus.style.display = "block";
+    }
+    return;
+  }
+
+  const timeZone =
+    typeof CONFIG !== "undefined" && CONFIG.GOOGLE_CALENDAR_TIMEZONE
+      ? CONFIG.GOOGLE_CALENDAR_TIMEZONE
+      : "Asia/Manila";
+  const params = new URLSearchParams({
+    src: calendarId,
+    ctz: timeZone,
+    mode: "MONTH",
+    showTitle: "0",
+    showPrint: "0",
+    showTabs: "0",
+    showCalendars: "0",
+    showTz: "0",
+  });
+
+  googleCalendarFrame.src = `https://calendar.google.com/calendar/embed?${params.toString()}`;
+  googleCalendarEmbed.hidden = false;
+  if (calendarContainer) calendarContainer.hidden = true;
+  if (bookingPanel) bookingPanel.hidden = true;
+  if (calendarStatus) {
+    calendarStatus.textContent = "Live Google Calendar is displayed below.";
+    calendarStatus.style.display = "block";
+  }
 }
 
 function renderCalendar() {

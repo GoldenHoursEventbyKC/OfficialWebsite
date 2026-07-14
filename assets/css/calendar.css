@@ -39,6 +39,21 @@
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
+.google-calendar-embed {
+  margin-top: 40px;
+  overflow: hidden;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.google-calendar-embed iframe {
+  width: 100%;
+  min-height: 720px;
+  border: 0;
+  display: block;
+}
+
 .calendar-header {
   display: flex;
   justify-content: space-between;
@@ -162,5 +177,9 @@
 
   .day {
     height: 50px;
+  }
+
+  .google-calendar-embed iframe {
+    min-height: 620px;
   }
 }
