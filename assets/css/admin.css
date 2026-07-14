@@ -16,6 +16,41 @@
   gap: 40px;
 }
 
+.admin-notice {
+  width: min(1200px, 84%);
+  margin: 0 auto 20px;
+  padding: 18px 22px;
+  background: #fff3cd;
+  color: #664d03;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.admin-notice strong {
+  color: #4b3d39;
+}
+
+.admin-notice code {
+  color: #4b3d39;
+  font-weight: 600;
+}
+
+.admin-action-link {
+  margin-left: auto;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: var(--gold);
+  color: white;
+  font-weight: 600;
+}
+
+.admin-action-link:hover {
+  opacity: 0.9;
+}
+
 .booking-form,
 .booking-list {
   background: white;

@@ -21,4 +21,6 @@ const CONFIG = {
   GOOGLE_CALENDAR_ID:
     "ec65656a09c939325c73aca7ab25aea6bb292d0604813ae6959457d8b28c564f@group.calendar.google.com",
   GOOGLE_CALENDAR_TIMEZONE: "Asia/Manila",
+  GOOGLE_CALENDAR_ADMIN_URL:
+    "https://calendar.google.com/calendar/r?cid=ec65656a09c939325c73aca7ab25aea6bb292d0604813ae6959457d8b28c564f%40group.calendar.google.com",
 };

@@ -1,7 +1,46 @@
 if (requireAdminPage()) {
   const form = document.getElementById("bookingForm");
   const table = document.getElementById("bookingTable");
+  const notice = document.getElementById("calendarAdminNotice");
   let events = [];
+
+  function isBackendConfigured() {
+    const isLocal =
+      window.location.hostname === "localhost" ||
+      window.location.hostname === "127.0.0.1";
+    return isLocal || Boolean(CONFIG.API_BASE_URL);
+  }
+
+  function googleCalendarAdminUrl() {
+    if (CONFIG.GOOGLE_CALENDAR_ADMIN_URL) return CONFIG.GOOGLE_CALENDAR_ADMIN_URL;
+    const calendarId = CONFIG.GOOGLE_CALENDAR_ID || "";
+    return `https://calendar.google.com/calendar/r?cid=${encodeURIComponent(calendarId)}`;
+  }
+
+  function showStaticAdminNotice() {
+    const url = googleCalendarAdminUrl();
+    if (notice) {
+      notice.hidden = false;
+      notice.innerHTML = `
+        <strong>Google Calendar admin is linked through Google Calendar.</strong>
+        <span>GitHub Pages cannot run the booking API needed for this form. Manage events directly in Google Calendar, or deploy the backend and set <code>CONFIG.API_BASE_URL</code>.</span>
+        <a class="admin-action-link" href="${url}" target="_blank" rel="noopener">Open Google Calendar</a>
+      `;
+    }
+    form.querySelectorAll("input, select, button").forEach((field) => {
+      field.disabled = true;
+    });
+    table.innerHTML = `
+      <tr>
+        <td colspan="5">
+          Use the Google Calendar link above to add, edit, or delete bookings.
+        </td>
+      </tr>`;
+  }
+
+  if (!isBackendConfigured()) {
+    showStaticAdminNotice();
+  } else {
 
   async function loadEvents() {
     try {
@@ -105,4 +144,5 @@ if (requireAdminPage()) {
   }
 
   loadEvents();
+  }
 }
