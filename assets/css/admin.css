@@ -1,0 +1,152 @@
+.admin-header {
+  padding-top: 140px;
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+.admin-header h1 {
+  color: var(--gold);
+  font-size: 3rem;
+}
+
+.admin-container {
+  padding: 50px 8%;
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 40px;
+}
+
+.booking-form,
+.booking-list {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.booking-form h2,
+.booking-list h2 {
+  margin-bottom: 20px;
+  color: var(--gold);
+}
+
+.booking-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.booking-form input,
+.booking-form select {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.booking-form button {
+  padding: 15px;
+  border: none;
+  background: var(--gold);
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background: var(--gold);
+  color: white;
+}
+
+th,
+td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.delete-btn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.nav-links a.active {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.admin-gallery-layout {
+  grid-template-columns: 380px 1fr;
+}
+
+.admin-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.admin-gallery-item {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.admin-gallery-item img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+}
+
+.admin-gallery-meta {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fafafa;
+}
+
+.category-badge {
+  font-size: 0.85rem;
+  text-transform: capitalize;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.form-hint {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0;
+}
+
+.form-status {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  min-height: 1.2em;
+}
+
+.form-status.success {
+  color: #28a745;
+}
+
+.form-status.error {
+  color: #dc3545;
+}
+
+.admin-error {
+  color: #dc3545;
+}
+
+@media (max-width: 900px) {
+  .admin-container {
+    grid-template-columns: 1fr;
+  }
+}

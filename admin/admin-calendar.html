@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Calendar | Golden Event Hours by KC</title>
+
+    <link rel="stylesheet" href="../assets/css/global.css" />
+    <link rel="stylesheet" href="../assets/css/admin.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <h2>Admin Panel</h2>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="admin-calendar.html" class="active">Calendar</a></li>
+          <li><a href="admin-gallery.html">Gallery</a></li>
+          <li><a href="../index.html">Back to Website</a></li>
+          <li><a href="#" data-admin-logout>Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="admin-header">
+      <h1>Booking Management</h1>
+      <p>Add, remove, and manage event schedules.</p>
+    </section>
+
+    <section class="admin-container">
+      <div class="booking-form">
+        <h2>Add Booking</h2>
+
+        <form id="bookingForm">
+          <label>Event Name</label>
+          <input type="text" id="eventName" required />
+
+          <label>Client Name</label>
+          <input type="text" id="clientName" required />
+
+          <label>Date</label>
+          <input type="date" id="eventDate" required />
+
+          <label>Time Slot</label>
+          <select id="timeSlot">
+            <option>8:00 AM - 10:00 AM</option>
+            <option>10:00 AM - 12:00 PM</option>
+            <option>12:00 PM - 2:00 PM</option>
+            <option>2:00 PM - 4:00 PM</option>
+            <option>4:00 PM - 6:00 PM</option>
+          </select>
+
+          <button type="submit">Add Booking</button>
+        </form>
+      </div>
+
+      <div class="booking-list">
+        <h2>Current Bookings</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Event</th>
+              <th>Client</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="bookingTable"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/admin-auth.js"></script>
+    <script src="../assets/js/admin-calendar.js"></script>
+  </body>
+</html>

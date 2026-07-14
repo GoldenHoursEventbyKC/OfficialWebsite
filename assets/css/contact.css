@@ -1,0 +1,150 @@
+.contact-hero {
+  height: 50vh;
+  position: relative;
+
+  background: url("https://picsum.photos/1920/1080?random=300");
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+}
+
+.contact-section {
+  padding: 100px 8%;
+
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+}
+
+.contact-form-card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.contact-form-card h2 {
+  color: var(--gold);
+  margin-bottom: 25px;
+}
+
+.contact-form-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form-card input,
+.contact-form-card textarea {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.contact-form-card button {
+  background: var(--gold);
+  color: white;
+
+  border: none;
+
+  padding: 15px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-card {
+  background: white;
+
+  padding: 25px;
+
+  border-radius: 15px;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.info-card h3 {
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.contact-cta {
+  background: var(--gold);
+  color: white;
+
+  text-align: center;
+
+  padding: 80px 8%;
+}
+
+.contact-cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.contact-cta p {
+  margin-bottom: 25px;
+}
+
+.contact-cta .btn {
+  background: white;
+  color: var(--gold);
+}
+
+.contact-form-card button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.form-status {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  min-height: 1.2em;
+}
+
+.form-status.success {
+  color: #28a745;
+}
+
+.form-status.error {
+  color: #dc3545;
+}
+
+@media (max-width: 900px) {
+  .contact-section {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content h1 {
+    font-size: 2.8rem;
+  }
+}

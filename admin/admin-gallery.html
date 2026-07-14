@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Gallery | Golden Event Hours by KC</title>
+
+    <link rel="stylesheet" href="../assets/css/global.css" />
+    <link rel="stylesheet" href="../assets/css/admin.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <h2>Admin Panel</h2>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="admin-calendar.html">Calendar</a></li>
+          <li><a href="admin-gallery.html" class="active">Gallery</a></li>
+          <li><a href="../index.html">Back to Website</a></li>
+          <li><a href="#" data-admin-logout>Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="admin-header">
+      <h1>Gallery Management</h1>
+      <p>Add and remove photos from the public gallery.</p>
+    </section>
+
+    <section class="admin-container admin-gallery-layout">
+      <div class="booking-form">
+        <h2>Add Photo</h2>
+
+        <form id="galleryForm">
+          <label>Category</label>
+          <select name="category" id="category" required>
+            <option value="polaroid-guestbook">Polaroid Guestbook</option>
+            <option value="preshoot-gallery">Preshoot Gallery</option>
+            <option value="selfie-mirror">Selfie Mirror</option>
+          </select>
+
+          <label>Upload Image</label>
+          <input type="file" name="image" id="image" accept="image/*" />
+
+          <label>Or Image URL</label>
+          <input
+            type="url"
+            name="url"
+            id="imageUrl"
+            placeholder="https://example.com/photo.jpg"
+          />
+
+          <p class="form-hint">
+            Upload a file from your computer, or paste an external image URL.
+          </p>
+
+          <button type="submit">Add to Gallery</button>
+          <p id="galleryStatus" class="form-status" aria-live="polite"></p>
+        </form>
+      </div>
+
+      <div class="booking-list">
+        <h2>Current Gallery</h2>
+        <div id="adminGalleryGrid" class="admin-gallery-grid"></div>
+      </div>
+    </section>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/admin-auth.js"></script>
+    <script src="../assets/js/admin-gallery.js"></script>
+  </body>
+</html>
