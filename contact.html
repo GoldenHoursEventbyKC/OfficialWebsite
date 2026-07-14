@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | Golden Event Hours by KC</title>
+
+    <link rel="stylesheet" href="assets/css/global.css" />
+    <link rel="stylesheet" href="assets/css/contact.css" />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        if (window.emailjs) {
+          emailjs.init("jcXiPaXYj5_yXBrk2");
+        }
+      })();
+    </script>
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/admin-auth.js"></script>
+    <script src="assets/js/admin-login.js" defer></script>
+    <script src="assets/js/contact.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <h2>Golden Event Hours by KC</h2>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="calendar.html">Calendar</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#" id="settingsLink">⚙️ Settings</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+
+    <section class="contact-hero">
+      <div class="overlay"></div>
+
+      <div class="hero-content">
+        <h1>Contact Us</h1>
+        <p>Let's start planning your unforgettable event.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+
+    <section class="contact-section">
+      <!-- CONTACT FORM -->
+
+      <div class="contact-form-card">
+        <h2>Send Us a Message</h2>
+
+        <form id="contactForm">
+          <input
+            type="text"
+            id="fullName"
+            name="fullName"
+            placeholder="Full Name"
+            required
+          />
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email Address"
+            required
+          />
+
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="Phone Number"
+          />
+
+          <input
+            type="text"
+            id="eventType"
+            name="eventType"
+            placeholder="Event Type"
+          />
+
+          <textarea
+            id="message"
+            name="message"
+            rows="6"
+            placeholder="Tell us about your event..."
+            required
+          ></textarea>
+
+          <button type="submit" id="submitBtn">Send Inquiry</button>
+          <p id="formStatus" class="form-status" aria-live="polite"></p>
+        </form>
+      </div>
+
+      <!-- CONTACT INFO -->
+
+      <div class="contact-info">
+        <div class="info-card">
+          <h3>Phone</h3>
+
+          <p>+63 912 345 6789</p>
+        </div>
+
+        <div class="info-card">
+          <h3>Email</h3>
+
+          <p>mirrorgrambykc@gmail.com</p>
+        </div>
+
+        <div class="info-card">
+          <h3>Service Area</h3>
+
+          <p>Online inquiries and event services by appointment</p>
+        </div>
+
+        <div class="info-card">
+          <h3>Business Hours</h3>
+
+          <p>Monday - Saturday</p>
+
+          <p>8:00 AM - 6:00 PM</p>
+        </div>
+
+        <div class="info-card">
+          <h3>Follow Us</h3>
+          <p>
+            <a
+              href="https://www.facebook.com/goldenhoureventsbykc"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Facebook
+            </a>
+          </p>
+
+          <p>
+            <a
+              href="https://www.instagram.com/goldenhourevents.bykc/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Instagram
+            </a>
+          </p>
+
+          <p>
+            <a
+              href="https://www.tiktok.com/@goldenhourevents.bykc?lang=en"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              TikTok
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+
+    <section class="contact-cta">
+      <h2>Ready To Create Your Dream Event?</h2>
+
+      <p>Contact Golden Event Hours by KC today.</p>
+
+      <a href="#" class="btn"> Book a Consultation </a>
+    </section>
+
+    <footer>
+      <h3>Golden Event Hours by KC</h3>
+
+      <p>Making Every Moment Golden</p>
+
+      <p>© 2026 All Rights Reserved</p>
+    </footer>
+    <div
+      id="settingsModal"
+      style="
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 10000;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <div
+        style="
+          background: white;
+          padding: 25px;
+          border-radius: 8px;
+          width: 300px;
+          text-align: center;
+          position: relative;
+          margin: 15% auto;
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        "
+      >
+        <span
+          id="closeModalBtn"
+          style="
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+          "
+          >&times;</span
+        >
+        <h3 style="margin-top: 0; margin-bottom: 20px; color: #333">
+          Admin Access Settings
+        </h3>
+
+        <div style="margin-bottom: 15px">
+          <input
+            type="text"
+            id="accessCodeInput"
+            placeholder="Enter Access Code"
+            style="
+              width: 100%;
+              padding: 10px;
+              box-sizing: border-box;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+            "
+          />
+        </div>
+
+        <button
+          id="sendCodeBtn"
+          style="
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-weight: bold;
+          "
+        >
+          Send a code
+        </button>
+
+        <button
+          id="loginAdminBtn"
+          style="
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+          "
+        >
+          Unlock & Login
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

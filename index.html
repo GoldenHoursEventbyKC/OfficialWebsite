@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Golden Event Hours by KC</title>
+
+    <link rel="stylesheet" href="assets/css/global.css" />
+    <link rel="stylesheet" href="assets/css/home.css" />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("jcXiPaXYj5_yXBrk2");
+      })();
+    </script>
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/admin-auth.js"></script>
+    <script src="assets/js/admin-login.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <h2>Golden Event Hours by KC</h2>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="calendar.html">Calendar</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#" id="settingsLink">⚙️ Settings</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="slider">
+        <div class="slide active">
+          <img src="assets/images/about/banner1.jpg" alt="" />
+        </div>
+      </div>
+
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <h1>Golden Event Hours by KC</h1>
+
+        <p>
+          Creating unforgettable celebrations, elegant experiences, and golden
+          memories.
+        </p>
+
+        <a href="contact.html" class="btn"> Book Your Event </a>
+      </div>
+    </section>
+
+    <section class="services-preview">
+      <div class="section-title">
+        <h2>Featured Services</h2>
+        <p>Professional event planning tailored for every occasion.</p>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Preshoot Gallery</h3>
+          <p>
+            Showcase your love story with elegant printed photos arranged for
+            guests to admire as they arrive.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Polaroid Guestbook</h3>
+          <p>
+            Give your guests a fun keepsake station for instant photos, sweet
+            notes, and memories from the celebration.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Selfie Mirror Booth</h3>
+          <p>
+            Create a stylish photo spot where guests can pose, smile, and enjoy
+            picture-perfect mirror moments.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Flower Wall</h3>
+          <p>
+            Add an elegant floral backdrop that makes every photo corner feel
+            soft, romantic, and event-ready.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Welcome Signage</h3>
+          <p>
+            Greet your guests with a personalized entrance display styled with
+            florals and thoughtful event details.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="showcase">
+      <div class="section-title">
+        <h2>Recent Events</h2>
+      </div>
+
+      <div class="showcase-grid">
+        <img
+          src="assets/images/about/571109355_122223857738139166_656563095204814557_n.jpg"
+          alt="Birthday celebrant holding a polaroid guestbook"
+        />
+        <img
+          src="assets/images/recent-events/polaroid-wedding-couple.jpg"
+          alt="Wedding couple beside a polaroid guestbook station"
+        />
+        <img
+          src="assets/images/recent-events/polaroid-wedding-station.jpg"
+          alt="Wedding couple beside a styled polaroid station"
+        />
+        <img
+          src="assets/images/recent-events/polaroid-signing-guestbook.jpg"
+          alt="Guest signing a polaroid guestbook"
+        />
+        <img
+          src="assets/images/recent-events/preshoot-gallery-wedding.jpg"
+          alt="Wedding couple with a preshoot gallery display"
+        />
+        <img
+          src="assets/images/recent-events/selfie-mirror-birthday-family.jpg"
+          alt="Family posing at a selfie mirror birthday booth"
+        />
+        <img
+          src="assets/images/recent-events/selfie-mirror-birthday-mascot.jpg"
+          alt="Child posing with a mascot at a selfie mirror booth"
+        />
+        <img
+          src="assets/images/recent-events/selfie-mirror-wedding-couple.jpg"
+          alt="Wedding couple taking a selfie mirror photo"
+        />
+      </div>
+    </section>
+
+    <section class="why-us">
+      <div class="section-title">
+        <h2>Why Choose Us?</h2>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card">
+          <h3>Professional Team</h3>
+        </div>
+
+        <div class="why-card">
+          <h3>Affordable Packages</h3>
+        </div>
+
+        <div class="why-card">
+          <h3>Memorable Experiences</h3>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <h3>Golden Event Hours by KC</h3>
+      <p>Making Every Moment Golden</p>
+      <p>© 2026 All Rights Reserved</p>
+    </footer>
+
+    <div
+      id="settingsModal"
+      style="
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 10000;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <div
+        style="
+          background: white;
+          padding: 25px;
+          border-radius: 8px;
+          width: 300px;
+          text-align: center;
+          position: relative;
+          margin: 15% auto;
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        "
+      >
+        <span
+          id="closeModalBtn"
+          style="
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+          "
+          >&times;</span
+        >
+        <h3 style="margin-top: 0; margin-bottom: 20px; color: #333">
+          Admin Access Settings
+        </h3>
+
+        <div style="margin-bottom: 15px">
+          <input
+            type="text"
+            id="accessCodeInput"
+            placeholder="Enter Access Code"
+            style="
+              width: 100%;
+              padding: 10px;
+              box-sizing: border-box;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+            "
+          />
+        </div>
+
+        <button
+          id="sendCodeBtn"
+          style="
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-weight: bold;
+          "
+        >
+          Send a code
+        </button>
+
+        <button
+          id="loginAdminBtn"
+          style="
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+          "
+        >
+          Unlock & Login
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

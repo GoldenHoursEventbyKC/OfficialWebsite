@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendar | Golden Event Hours by KC</title>
+
+    <link rel="stylesheet" href="assets/css/global.css" />
+    <link rel="stylesheet" href="assets/css/calendar.css" />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("jcXiPaXYj5_yXBrk2");
+      })();
+    </script>
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/admin-auth.js"></script>
+    <script src="assets/js/admin-login.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <h2>Golden Event Hours by KC</h2>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="calendar.html">Calendar</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#" id="settingsLink">⚙️ Settings</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+
+    <section class="calendar-hero">
+      <div class="overlay"></div>
+
+      <div class="hero-content">
+        <h1>Booking Calendar</h1>
+        <p>View available dates and booked schedules.</p>
+      </div>
+    </section>
+
+    <!-- CALENDAR -->
+
+    <p id="calendarStatus" class="calendar-status" style="display: none"></p>
+
+    <section class="calendar-section">
+      <div class="calendar-container">
+        <div class="calendar-header">
+          <button id="prevMonth">◀</button>
+
+          <h2 id="monthYear"></h2>
+
+          <button id="nextMonth">▶</button>
+        </div>
+
+        <div class="weekdays">
+          <div>Sun</div>
+          <div>Mon</div>
+          <div>Tue</div>
+          <div>Wed</div>
+          <div>Thu</div>
+          <div>Fri</div>
+          <div>Sat</div>
+        </div>
+
+        <div id="calendarDays" class="calendar-days"></div>
+      </div>
+
+      <!-- SLOT DISPLAY -->
+
+      <div class="booking-panel">
+        <h2 id="selectedDate">Select a Date</h2>
+
+        <div class="slots-container">
+          <div class="booked-slots">
+            <h3>Booked Slots</h3>
+
+            <ul id="bookedList"></ul>
+          </div>
+
+          <div class="available-slots">
+            <h3>Available Slots</h3>
+
+            <ul id="availableList"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <h3>Golden Event Hours by KC</h3>
+
+      <p>Making Every Moment Golden</p>
+
+      <p>© 2026 All Rights Reserved</p>
+    </footer>
+
+    <script src="assets/js/calendar.js"></script>
+    <div
+      id="settingsModal"
+      style="
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(74, 62, 61, 0.6);
+        z-index: 10000;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <div
+        style="
+          background: var(--white);
+          padding: 30px;
+          border-radius: 12px;
+          width: 320px;
+          text-align: center;
+          position: relative;
+          margin: 15% auto;
+          box-shadow: 0px 10px 30px rgba(74, 62, 61, 0.2);
+          border: 1px solid var(--elegant-beige);
+        "
+      >
+        <span
+          id="closeModalBtn"
+          style="
+            position: absolute;
+            top: 12px;
+            right: 18px;
+            cursor: pointer;
+            font-size: 22px;
+            font-weight: bold;
+            color: var(--palette-dark);
+            opacity: 0.7;
+          "
+          >&times;</span
+        >
+
+        <h3
+          style="
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: var(--palette-dark);
+            font-weight: 600;
+          "
+        >
+          Admin Access
+        </h3>
+
+        <div style="margin-bottom: 15px">
+          <input
+            type="text"
+            id="accessCodeInput"
+            placeholder="Enter Access Code"
+            style="
+              width: 100%;
+              padding: 12px;
+              box-sizing: border-box;
+              border: 1px solid var(--elegant-beige);
+              border-radius: 6px;
+              color: var(--palette-dark);
+              text-align: center;
+              background-color: var(--pinkish-clear);
+            "
+          />
+        </div>
+
+        <button
+          id="sendCodeBtn"
+          style="
+            width: 100%;
+            padding: 12px;
+            background-color: var(--elegant-beige);
+            color: var(--white);
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-bottom: 12px;
+            font-weight: 600;
+          "
+        >
+          Send a code
+        </button>
+
+        <button
+          id="loginAdminBtn"
+          style="
+            width: 100%;
+            padding: 12px;
+            background-color: var(--palette-dark);
+            color: var(--pinkish-clear);
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+          "
+        >
+          Unlock & Login
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

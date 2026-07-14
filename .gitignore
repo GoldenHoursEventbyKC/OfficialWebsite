@@ -1,0 +1,9 @@
+node_modules/
+server/node_modules/
+.env
+server/.env
+server/credentials.json
+assets/images/gallery/*
+!assets/images/gallery/.gitkeep
+GoldenHourEventsBYKC/
+server/*.log
