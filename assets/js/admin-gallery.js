@@ -3,6 +3,10 @@ if (requireAdminPage()) {
   const galleryGrid = document.getElementById("adminGalleryGrid");
   const statusEl = document.getElementById("galleryStatus");
   let items = [];
+  const backendConfigured =
+    window.location.hostname === "localhost" ||
+    window.location.hostname === "127.0.0.1" ||
+    Boolean(CONFIG.API_BASE_URL);
 
   const CATEGORY_LABELS = {
     "polaroid-guestbook": "Polaroid Guestbook",
@@ -10,9 +14,19 @@ if (requireAdminPage()) {
     "selfie-mirror": "Selfie Mirror",
   };
 
+  if (!backendConfigured) {
+    form.querySelectorAll("input, select, button").forEach((field) => {
+      field.disabled = true;
+    });
+    statusEl.textContent =
+      "Gallery uploads need the backend API. Current published images are shown on the right.";
+  }
+
   async function loadGallery() {
     try {
-      const data = await apiFetch("/api/gallery");
+      const data = backendConfigured
+        ? await apiFetch("/api/gallery")
+        : await loadStaticGallery();
       items = data.items || [];
       renderGallery();
     } catch (err) {
@@ -24,6 +38,13 @@ if (requireAdminPage()) {
     e.preventDefault();
     statusEl.textContent = "Uploading...";
     statusEl.className = "form-status";
+
+    if (!backendConfigured) {
+      statusEl.textContent =
+        "Uploads need the backend API. Current published images are shown on the right.";
+      statusEl.classList.add("error");
+      return;
+    }
 
     const formData = new FormData(form);
     const imageFile = formData.get("image");
@@ -68,18 +89,45 @@ if (requireAdminPage()) {
       .map(
         (item) => `
       <div class="admin-gallery-item">
-        <img src="${item.url.startsWith("/") ? apiUrl(item.url) : item.url}" alt="${item.category}" />
+        <img src="${galleryImageUrl(item.url)}" alt="${item.category}" />
         <div class="admin-gallery-meta">
           <span class="category-badge">${CATEGORY_LABELS[item.category] || item.category}</span>
-          <button class="delete-btn" data-id="${item.id}">Remove</button>
+          ${
+            backendConfigured
+              ? `<button class="delete-btn" data-id="${item.id}">Remove</button>`
+              : ""
+          }
         </div>
       </div>`,
       )
       .join("");
 
-    galleryGrid.querySelectorAll(".delete-btn").forEach((btn) => {
-      btn.addEventListener("click", () => removeItem(btn.dataset.id));
+    if (backendConfigured) {
+      galleryGrid.querySelectorAll(".delete-btn").forEach((btn) => {
+        btn.addEventListener("click", () => removeItem(btn.dataset.id));
+      });
+    }
+  }
+
+  async function loadStaticGallery() {
+    const response = await fetch(`../assets/data/gallery.json?v=${Date.now()}`, {
+      cache: "no-store",
     });
+    if (!response.ok) throw new Error(`Request failed (${response.status})`);
+    return response.json();
+  }
+
+  function galleryImageUrl(url) {
+    if (!url) return "";
+    if (/^https?:\/\//i.test(url)) return url;
+    if (url.startsWith("/assets/")) {
+      const basePath = window.location.pathname.includes("/OfficialWebsite/")
+        ? "/OfficialWebsite"
+        : "";
+      return `${basePath}${url}`;
+    }
+    if (url.startsWith("assets/")) return `../${url}`;
+    return url;
   }
 
   async function removeItem(id) {

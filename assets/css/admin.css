@@ -51,6 +51,24 @@
   opacity: 0.9;
 }
 
+.admin-action-panel {
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.admin-action-panel p {
+  color: #4b3d39;
+  font-size: 1rem;
+}
+
+.admin-action-panel .admin-action-link {
+  margin-left: 0;
+}
+
 .booking-form,
 .booking-list {
   background: white;
