@@ -1,7 +1,7 @@
 if (requireAdminPage()) {
   const form = document.getElementById("bookingForm");
-  const table = document.getElementById("bookingTable");
   const bookingListCard = document.getElementById("bookingListCard");
+  let table;
   let events = [];
 
   function isBackendConfigured() {
@@ -38,6 +38,7 @@ if (requireAdminPage()) {
 
   async function loadEvents() {
     try {
+      ensureBookingTable();
       const data = await apiFetch("/api/calendar/events");
       events = (data.events || []).map((e) => {
         const start = new Date(e.start.dateTime);
@@ -61,8 +62,28 @@ if (requireAdminPage()) {
       });
       renderBookings();
     } catch (err) {
+      ensureBookingTable();
       table.innerHTML = `<tr><td colspan="5">${err.message}</td></tr>`;
     }
+  }
+
+  function ensureBookingTable() {
+    if (table) return;
+    bookingListCard.innerHTML = `
+      <h2>Current Bookings</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Event</th>
+            <th>Client</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="bookingTable"></tbody>
+      </table>`;
+    table = document.getElementById("bookingTable");
   }
 
   form.addEventListener("submit", async function (e) {
